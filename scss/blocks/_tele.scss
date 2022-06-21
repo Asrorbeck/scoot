@@ -1,0 +1,122 @@
+.tele {
+    
+    &__container {
+        padding-top: 100px;
+        padding-bottom: 55px;
+        @include df-aic;
+        justify-content: space-between;
+    }
+    
+    &__wrapper {
+        max-width: 445px;
+        width: 100%;
+    }
+    
+    &__heading {
+        font-family: 'Space Mono';
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 48px;
+        letter-spacing: -2.14286px;        
+        color: $b-grey;
+        margin-bottom: 24px;
+    }
+    
+    &__text {
+        font-family: 'Lexend Deca';
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 25px;
+        color: #939CAA;
+        margin-bottom: 54px;
+    }
+    
+    &__link {
+        @include button;
+    }
+    
+    &__picture {
+        position: relative;
+        &::before {
+            position: absolute;
+            content: "";
+            left: calc(100% + 64px);
+            display: inline-block;
+            width: 445px;
+            height: 445px;
+            border-radius: 50%;
+            background-color: #E5ECF4;
+        }
+        
+        &::after {
+            position: absolute;
+            content: "";
+            display: inline-block;
+            background-image: url('./../img/opa-arrow.svg');
+            width: 740px;
+            height: 150px;
+            bottom: 0;
+            left: calc(50% - 350px);
+        }
+    }
+    
+}
+
+@media only screen and (max-width:1000px) {
+    .tele {
+        &__container {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        
+        &__picture  {
+            order: -1;
+            margin-bottom: 56px;
+        }
+        
+        &__heading {
+            text-align: center;
+        }
+        
+        &__text {
+            text-align: center;
+        }
+        
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+
+@media only screen and (max-width:650px) {
+    .tele {
+        &__picture {
+            &::after {
+                left: calc(50% - 250px);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:560px) {
+    .tele {
+        &__picture {
+            &::before {
+                display: none;
+            }
+        }
+        
+        &__heading {
+            font-size: 32px;
+            line-height: 32px;
+        }
+        
+        &__text {
+            font-size: 15px;
+            line-height: 25px;
+        }
+    }
+}

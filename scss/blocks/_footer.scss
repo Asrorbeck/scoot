@@ -1,0 +1,77 @@
+.footer {
+    background-color: $black;
+    
+    &__container {
+        padding-top: 35px;
+        padding-bottom: 35px;
+        @include df-aic;
+        justify-content: space-between
+    }
+    
+   
+    
+    &__main-wrapper {
+        @include df-aic;
+        gap: 58px;
+    }
+    
+    &__list {
+        @include df-aic;
+        gap: 32px;
+    }
+    
+    
+    &__item-link {
+        font-family: 'Space Mono';
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 25px;
+        color: #939CAA;
+        transition: all 0.3s ease;
+        &:hover {
+            color: $yellow;
+        }
+    }
+    
+    &__social-wrapper {
+        @include df-aic;
+        gap: 24px;
+    }
+    
+}
+
+@media only screen and (max-width:650px) {
+    .footer {
+
+        &__logo-img {
+            width: 70px;
+        }
+
+        &__main-wrapper {
+
+        }
+    }
+}
+
+@media only screen and (max-width:560px) {
+    .footer {
+        &__container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__main-wrapper {
+            display: flex;
+            flex-direction: column;
+            grid-area: 41px;
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 85px;
+            gap: 16px;
+        }
+
+    }
+}

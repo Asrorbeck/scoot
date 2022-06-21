@@ -1,0 +1,168 @@
+.process {
+    
+    &__container {
+        padding-top: 160px;
+        padding-bottom: 100px;
+    }
+    
+    &__list {
+        @include df-aic;
+        gap: 30px;
+    }
+    
+    &__item {
+        position: relative;
+        max-width: 350px;
+        width: 100%;
+        padding-top: 136px;
+        &:nth-child(2)::before {
+            background-image: url('./../img/scooter.svg');
+        }
+        &:nth-child(3)::before {
+            background-image: url('./../img/ride-scooter.svg');
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            display: inline-block;
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            background-color: $yellow;
+            background-image: url('./../img/locate-app.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 38px 47px;
+            top: 0;
+            z-index: 1;
+            
+        }
+        &::after {
+            position: absolute;
+            content: "";
+            display: inline-block;
+            max-width: 380px;
+            width: 100%;
+            height: 15px;
+            background-color: $l-grey;
+            top: 50%;
+            right: 100%;
+            transform: translateY(calc(-50% - 95px)) translateX(10px);
+        }
+    }
+    
+    &__heading {
+        font-family: 'Space Mono';
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 28px;
+        letter-spacing: -1.07143px;
+        color: $b-grey;
+        margin-bottom: 27px;
+    }
+    
+    &__text {
+        font-family: 'Lexend Deca';
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 25px;
+        color: $grey;
+    }
+}
+
+
+@media only screen and (max-width:1000px) {
+    .process {
+        
+        &__container {
+            padding-top: 100px;
+            align-items: center;
+        }
+        
+        &__list {
+            padding-left: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        &__item {
+            padding: 0;
+            &::before {
+                position: absolute;
+                content: "";
+                display: inline-block;
+                width: 96px;
+                height: 96px;
+                border-radius: 50%;
+                background-color: $yellow;
+                top: 50%;
+                right: calc(100% + 79px);
+                transform: translateY(50%);
+                background-image: url('./../img/locate-app.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 38px 47px;
+                top: 0;
+                z-index: 1;
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                display: inline-block;
+                width: 210px;
+                height: 15px;
+                background-color: $l-grey;
+                top: 0;
+                right: calc(100% + 20px);
+                // transform: translateY(calc(-50% - 95px)) translateX(10px);
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:560px) {
+    .process {
+        
+        &__container {
+        }
+        
+        &__list {
+            padding: 0;
+        }
+        
+        &__heading {
+            font-size: 20px;
+            line-height: 28px;
+            text-align: center;
+        }
+        
+        &__text {
+            font-size: 15px;
+            line-height: 25px;
+            text-align: center;
+        }
+        
+        &__item {
+            padding-top: 102px;
+            &::before {
+                width: 56px;
+                height: 56px;
+                border-radius: 50%;
+                background-color: $yellow;
+                background-image: url('./../img/locate-app.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 22px 27px;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 1;
+            }
+            &::after {
+                display: none;
+            }
+        }
+    }
+}

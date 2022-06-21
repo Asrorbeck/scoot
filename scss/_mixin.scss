@@ -1,0 +1,25 @@
+@mixin button {
+    padding: 14px 39px;
+    // border: none;
+    border: 2px solid $yellow;
+    outline: none;
+    background-color: $yellow;
+    font-family: 'Space Mono';
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 25px;
+    text-align: center;
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    &:hover {
+        border: 2px solid $yellow;
+        background-color: transparent;
+        color: $yellow;
+    }
+}
+
+@mixin df-aic {
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,164 @@
+.hero {
+    background-color: #4D5D71;
+    
+    &__big-container {
+        background-image: url('./../img/hero-bg.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    
+    &__container {
+        padding-top: 153px;
+        padding-bottom: 153px;
+        
+    }
+    
+    &__wrapper {
+        max-width: 500px;
+        width: 100%;
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 0;
+            height: 0;
+            background-repeat: no-repeat;
+            background-image: url('./../../img/tablet-arrow.svg');
+        }
+    }
+    
+    &__heading {
+        font-family: 'Space Mono';
+        font-weight: 700;
+        font-size: 56px;
+        line-height: 56px;
+        letter-spacing: -2.5px;
+        color: #FFFFFF;
+        margin-bottom: 40px;
+    }
+    
+    &__text {
+        position: relative;
+        font-family: 'Lexend Deca';
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 25px;
+        color: #FFFFFF;
+        margin-bottom: 40px;
+        margin-left: 95px;
+        &::before {
+            position: absolute;
+            content: "";
+            display: inline-block;
+            width: 500px;
+            height: 15px;
+            background-color: $yellow;
+            top: 50%;
+            right: calc(100% + 57px);
+            transform: translateY(-50%)
+        }
+        
+        &::after {
+            position: absolute;
+            content: "";
+            display: inline-block;
+            width: 447px;
+            height: 138px;
+            background-image: url('./../img/hero-arrow.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            top: 50%;
+            left: calc(100% + 57px);
+            transform: translateY(-9%)
+        }
+    }
+    
+    &__btn {
+        @include button;
+        margin-left: 95px;
+    }
+}
+
+
+@media only screen and (max-width:1000px) {
+    .hero {
+        
+        
+        &__big-container {
+            background-image: url('./../../img/tablet-bg.jpg');
+        }
+        
+        &__heading {
+            text-align: center;
+        }
+        &__wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: auto;
+            margin-left: auto;
+            &::before {
+                width: 447px;
+                height: 155px;
+                position: absolute;
+                bottom: calc(0% - 150px);
+                right: calc(100% - 90px)
+            }
+        }
+        &__text{
+            margin: 0;
+            text-align: center;
+            margin-bottom: 40px;
+            &::before {
+                display: none;
+            }
+            &::after {
+                display: none;
+            }
+        }
+        
+        &__btn {
+            margin: 0;
+        }
+    }
+}
+
+@media only screen and (max-width:560px) {
+    .hero {
+        
+        
+        &__big-container {
+            background-image: url('./../../img/tablet-bg.jpg');
+        }
+        
+        &__heading {
+            font-size: 40px;
+            line-height: 40px;
+        }
+        &__wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: auto;
+            margin-left: auto;
+            &::before {
+                width: 447px;
+                height: 155px;
+                position: absolute;
+                bottom: calc(0% - 150px);
+                right: calc(100% - 90px)
+            }
+        }
+        &__text{
+            font-size: 15px;
+            line-height: 25px;
+        }
+        
+        &__btn {
+            padding: 14px 39px;
+        }
+    }
+}

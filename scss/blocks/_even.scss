@@ -1,0 +1,183 @@
+.even {
+    &__container {
+        padding-top: 100px;
+        padding-bottom: 200px;
+    }
+    
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 160px;
+    }
+    
+    &__item {
+        @include df-aic;
+        justify-content: space-between;
+    }
+    
+    &__img-wrapper {
+        position: relative;
+        width: 445px;
+        height: 445px;
+        object-fit: contain;
+        &::before {
+            position: absolute;
+            content: "";
+            right: calc(100% + 64px);
+            display: inline-block;
+            width: 445px;
+            height: 445px;
+            border-radius: 50%;
+            background-color: #E5ECF4;
+        }
+        &::after {
+            position: absolute;
+            content: "";
+            display: inline-block;
+            background-image: url('./../../img/city-arrow.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 740px;
+            height: 150px;
+            top: 0;
+            right: calc(50% - 185px);
+        }
+    }
+    
+    &__img {
+        width: 445px;
+        height: 445px;
+        object-fit: contain;
+        border-radius: 50%;
+    }
+    
+    
+    &__text-wrapper {
+        max-width: 445px;
+        width: 100%;
+    }
+    
+    &__heading {
+        font-family: 'Space Mono';
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 48px;
+        letter-spacing: -2.14286px;
+        color: #495567;
+        margin-bottom: 24px;
+    }
+    
+    &__text {
+        font-family: 'Lexend Deca';
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 25px;
+        color: #939CAA;
+        margin-bottom: 40px;
+    }
+    
+    &__link {
+        @include button;
+    }
+}
+
+
+.even__item:nth-child(2n){
+    .even__img-wrapper {
+        order: 1;
+        &::before {
+            left: calc(100% + 64px);
+        }
+        &::after {
+            top: calc(50% - 170px);
+            background-image: url('./../../img/cash-arrow.svg');
+            left: calc(50% - 185px);
+        }
+    }
+}
+
+
+@media only screen and (max-width:1000px) {
+    .even {
+        &__item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        &__text-wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        &__list {
+            gap: 120px;
+        }
+        
+        &__heading {
+            text-align: center;
+            margin-top: 64px;
+        }
+        
+        &__text {
+            text-align: center;
+        }
+        
+        &__img {
+        }
+        
+        .even__item:nth-child(2n){
+            .even__img-wrapper {
+                order: -1;
+                &::before {
+                    left: calc(100% + 64px);
+                }
+                &::after {
+                    top: calc(50% - 170px);
+                    background-image: url('./../../img/cash-arrow.svg');
+                    left: calc(50% - 185px);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:560px) {
+    .even {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__item {
+        }
+        
+        &__text-wrapper{
+        }
+        
+        &__list {
+            gap: 100px;
+        }
+        
+        &__heading {
+            font-size: 32px;
+            line-height: 32px;
+            max-width: 311px;
+            width: 100%;
+        }
+        
+        &__text {
+        }
+        
+        &__img-wrapper {
+            width: 311px;
+            height: 311px;
+            &::before {
+                display: none;
+            }
+        }
+
+        &__img {
+            width: 311px;
+            height: 311px;
+        }
+    }
+}

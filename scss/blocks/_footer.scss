@@ -8,7 +8,7 @@
         justify-content: space-between
     }
     
-   
+    
     
     &__main-wrapper {
         @include df-aic;
@@ -37,18 +37,41 @@
         @include df-aic;
         gap: 24px;
     }
+
+    &__social-link {
+        svg {
+            path {
+                transition: all 0.3s ease;
+            }
+        }
+    }
+
+    &__social-link:hover{
+        svg {
+            path {
+                fill: $white ;
+            }
+        }
+    }
     
+}
+
+
+svg {
+    path:hover {
+        fill: red;
+    }
 }
 
 @media only screen and (max-width:650px) {
     .footer {
-
+        
         &__logo-img {
             width: 70px;
         }
-
+        
         &__main-wrapper {
-
+            
         }
     }
 }
@@ -59,19 +82,19 @@
             display: flex;
             flex-direction: column;
         }
-
+        
         &__main-wrapper {
             display: flex;
             flex-direction: column;
             grid-area: 41px;
         }
-
+        
         &__list {
             display: flex;
             flex-direction: column;
             margin-bottom: 85px;
             gap: 16px;
         }
-
+        
     }
 }

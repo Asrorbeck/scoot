@@ -684,9 +684,6 @@ button {
 }
 
 @media only screen and (max-width: 560px) {
-  .hero__big-container {
-    background-image: url("./../../img/tablet-bg.jpg");
-  }
   .hero__heading {
     font-size: 40px;
     line-height: 40px;
@@ -719,6 +716,12 @@ button {
   }
   .hero__btn {
     padding: 14px 39px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .hero__big-container {
+    background-image: url("./../../img/mobile-bg.jpg");
   }
 }
 
@@ -1022,6 +1025,9 @@ button {
 }
 
 @media only screen and (max-width: 560px) {
+  .tele__picture::after {
+    left: calc(50% - 150px);
+  }
   .tele__picture::before {
     display: none;
   }

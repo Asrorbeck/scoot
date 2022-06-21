@@ -128,11 +128,6 @@
 @media only screen and (max-width:560px) {
     .hero {
         
-        
-        &__big-container {
-            background-image: url('./../../img/tablet-bg.jpg');
-        }
-        
         &__heading {
             font-size: 40px;
             line-height: 40px;
@@ -159,6 +154,14 @@
         
         &__btn {
             padding: 14px 39px;
+        }
+    }
+}
+
+@media only screen and (max-width:560px) {
+    .hero {
+        &__big-container {
+            background-image: url('./../../img/mobile-bg.jpg');
         }
     }
 }
